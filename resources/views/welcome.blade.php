@@ -38,7 +38,7 @@
                     @endauth
                 </div>
             @endif
-<h1> Ghofrane</h1>
+
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
@@ -51,13 +51,29 @@
 
 <h2>TODOS</h2>
 <ul>
-
-
-@foreach ($todos as $todo)
-    <li>{{$todo -> title}}
-        </li>
-@endforeach
+    @foreach ($todos as $todo)
+        <li>{{ $todo->title }}</li>
+    @endforeach
 </ul>
+
+
+<h2>Users</h2>
+<table style="border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid black; padding: 8px;">Username</th>
+            <th style="border: 1px solid black; padding: 8px;">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($users as $user)
+            <tr>
+                <td style="border: 1px solid black; padding: 8px;">{{ $user->username }}</td>
+                <td style="border: 1px solid black; padding: 8px;">{{ $user->email }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 
 
 
